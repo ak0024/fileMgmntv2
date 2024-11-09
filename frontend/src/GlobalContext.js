@@ -10,12 +10,23 @@ export function GlobalProvider({ children }) {
     const [navPath, setNavPath] = useState(null);
     const [divHeight, setDivHeight] = useState(0);
     const [divSideBar, setDivSideBar] = useState(0);
+    const [breadCrumbList, setBreadcrumbList] = useState([{
+        extension: "",
+        fileid: 0,
+        filename: "My Files",
+        parentfile: 0,
+        path: "/",
+        type: "Folder",
+        uniquefilename: "My Files",
+    }]);
+
 
 
     return (
         <GlobalContext.Provider value={{
             isCollapsed, setIsCollapsed, navPath, setNavPath,
-            divHeight, setDivHeight, divSideBar, setDivSideBar
+            divHeight, setDivHeight, divSideBar, setDivSideBar,
+            breadCrumbList, setBreadcrumbList
         }}>
             {children}
         </GlobalContext.Provider>

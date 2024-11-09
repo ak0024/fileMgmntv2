@@ -1,0 +1,48 @@
+.drive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px;
+}
+
+.drive-item {
+    width: 120px;
+    text-align: center;
+}
+
+.folder,
+.file {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.folder:hover,
+.file:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+}
+
+.folder-contents {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.folder i,
+.file i {
+    font-size: 30px;
+    color: #ffab00;
+}
+
+.file i {
+    color: #00bfa5;
+}
+
+p {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #333;
+    word-wrap: break-word;
+}

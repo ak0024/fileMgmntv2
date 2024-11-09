@@ -10,6 +10,8 @@ import { useGlobalContext } from './GlobalContext';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun, faSignOut } from '@fortawesome/free-solid-svg-icons';
+import Drive from './FolderGrid';
+import Breadcrumb from './BreadCrumb';
 
 
 
@@ -20,6 +22,15 @@ function App() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isDarkMode, setDarkMode] = useState(false);
   const dropdownRef = useRef(null);
+  const [breadCrumbList, setBreadcrumbList] = useState([{
+    extension: "",
+    fileid: 0,
+    filename: "My Files",
+    parentfile: 0,
+    path: "/",
+    type: "Folder",
+    uniquefilename: "My Files",
+  }]);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -50,6 +61,10 @@ function App() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  function handleFolder(item) {
+    setBreadcrumbList([...breadCrumbList, item])
+  }
 
 
 
@@ -113,6 +128,8 @@ function App() {
             <section>
               <p>{navPath}</p>
             </section>
+            <Breadcrumb list={breadCrumbList} />
+            <Drive handleFolder={handleFolder} />
           </div>
         </div>
         {/* <Footer /> */}
