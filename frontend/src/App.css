@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  background: #eee;
+}
+
+
+.app-container {
+
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensures the container fills the viewport height */
+}
+
+/* Header Styles */
+.header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  /* Added for dropdown positioning */
 }
 
-.App-link {
-  color: #61dafb;
+.header-logo {
+  margin-right: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.header-app-name h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Header right side */
+.header-right {
+  margin-left: auto;
+  /* Pushes the profile and buttons to the right */
+  display: flex;
+  align-items: center;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+  position: relative;
+  margin-right: 15px;
+  /* Space between profile and dark mode button */
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.dropdown-content p {
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-content p:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+/* Body Styles */
+.body {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+
+.body-header {
+  color: #666;
+  border-bottom: 2px solid #666;
+  padding: 10px;
+}
+
+.body-content {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.body-content h2 {
+  color: #333;
+}
+
+.body-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background: #333;
+  /* Dark background */
+  color: #eee;
+  /* Light text */
+}
+
+
+.dark-mode-button,
+.sign-out {
+  background: transparent;
+  /* No background */
+  border: none;
+  /* No border */
+  cursor: pointer;
+  /* Pointer on hover */
+  font-size: 20px;
+  /* Icon size */
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  /* Space between icons */
+}
+
+.dark-mode-button:hover,
+.sign-out:hover {
+  color: #007BFF;
+  /* Change color on hover */
 }
